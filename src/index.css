@@ -1,0 +1,72 @@
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@font-face {
+  font-family: "HelveticaNeue";
+  font-style: normal;
+  font-weight: 400;
+  src: url(/fonts/HelveticaNeueCyr-Roman.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "HelveticaNeue";
+  font-style: normal;
+  font-weight: 500;
+  src: url(/fonts/HelveticaNeueCyr-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "HelveticaNeue";
+  font-style: normal;
+  font-weight: 700;
+  src: url(/fonts/HelveticaNeueCyr-Bold.ttf) format("truetype");
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 50px;
+  border: 4px solid transparent;
+  background-clip: padding-box;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ccc;
+  border-color: #fff;
+}
+
+::-moz-selection {
+  color: #121212;
+  background: #aaa;
+}
+
+::selection {
+  color: #121212;
+  background: #aaa;
+}
+
+/* Links  */
+a:focus {
+  box-shadow: unset !important;
+}
+
+a:hover {
+  text-decoration: unset !important;
+}
+
+/* Table  */
+tr {
+  height: 80px;
+}
