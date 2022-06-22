@@ -10,6 +10,7 @@ import {
   useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
+import { useEffect } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { useParams } from "react-router-dom";
 import { CoinInfo } from "../../../types";
@@ -31,6 +32,10 @@ type CoinDetailsDataViewProps = {
 const CoinDetailsDataView = ({ coin, isLoading }: CoinDetailsDataViewProps) => {
   const currency = useAppSelector((state) => state.filteredCurrency.currency);
   const color = useColorModeValue("gray.600", "gray.300");
+
+  const currentPrice = Number(
+    coin?.market_data.current_price[currency?.name.toLowerCase()!]
+  ).toFixed(2);
 
   return (
     <Flex {...styles.container}>
@@ -63,9 +68,14 @@ const CoinDetailsDataView = ({ coin, isLoading }: CoinDetailsDataViewProps) => {
             h={isLoading ? "20px" : "auto"}
             w={isLoading ? "75px" : "auto"}
           >
-            <Text fontSize="20px" fontWeight="medium">
-              {currency?.symbol}{" "}
-              {Number(coin?.market_data.current_price[currency?.name.toLowerCase()!]).toFixed(2)}
+            <Text
+              fontSize="20px"
+              fontWeight="medium"
+              color="brand.primary"
+              bgGradient="linear(145deg, brand.primary, brand.secondary)"
+              bgClip="text"
+            >
+              {currency?.symbol} {Number(currentPrice).toLocaleString()}
             </Text>
           </Loader>
 
