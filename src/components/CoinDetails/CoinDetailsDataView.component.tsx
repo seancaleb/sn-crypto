@@ -94,8 +94,8 @@ const CoinDetailsDataView = ({ coin, isLoading }: CoinDetailsDataViewProps) => {
         <Heading fontSize="24px">Price Change Percentage</Heading>
         <HStack w="100%" spacing="20px">
           <Text flex={1} color={color} maxW="767px">
-            This is the price performance of {coin?.name} ({coin?.symbol}). It shows the percentage
-            gains and losses for each time period.
+            This is the price performance of {coin?.name} ({coin?.symbol.toUpperCase()}). It shows
+            the percentage gains and losses for each time period.
           </Text>
           <Box flex={1} display={{ base: "none", lg: "block" }} />
         </HStack>
