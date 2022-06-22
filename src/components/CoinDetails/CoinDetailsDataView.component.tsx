@@ -58,6 +58,17 @@ const CoinDetailsDataView = ({ coin, isLoading }: CoinDetailsDataViewProps) => {
             </HStack>
           </Loader>
 
+          <Loader
+            isLoaded={!isLoading}
+            h={isLoading ? "20px" : "auto"}
+            w={isLoading ? "75px" : "auto"}
+          >
+            <Text fontSize="20px" fontWeight="medium">
+              {currency?.symbol}{" "}
+              {Number(coin?.market_data.current_price[currency?.name.toLowerCase()!]).toFixed(2)}
+            </Text>
+          </Loader>
+
           <Loader isLoaded={!isLoading} h={isLoading ? "1em" : "auto"}>
             <Text color={color} maxW="767px">
               {coin?.name} ({coin?.symbol.toUpperCase()}) live price in {currency?.fullName} (
